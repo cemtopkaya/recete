@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE preferences SYSTEM "http://java.sun.com/dtd/preferences.dtd">
+<preferences EXTERNAL_XML_VERSION="1.0">
+  <root type="user">
+    <map/>
+    <node name="connectionString">
+      <map>
+        <entry key="DB_URL" value="jdbc:sqlserver://localhost:1434;databaseName=ERecete;user=sa;password=Halil*123;"/>
+        <entry key="USER" value="sa"/>
+        <entry key="PASS" value="q1w2.e3r4"/>
+      </map>
+    </node>
+  </root>
+</preferences>

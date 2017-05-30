@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+	minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0"
+	xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="controllers.ReceteController">
+	<children>
+		<ToolBar prefHeight="40.0" prefWidth="200.0">
+			<items>
+				<Button fx:id="toolbarBtnReceteEkle" mnemonicParsing="false"
+					text="Ekle" />
+				<Button fx:id="toolbarBtnReceteDuzenle" mnemonicParsing="false"
+					text="Düzenle" />
+				<Button fx:id="toolbarBtnReceteSil" mnemonicParsing="false"
+					text="Sil" />
+			</items>
+		</ToolBar>
+		<VBox prefHeight="200.0" prefWidth="100.0">
+			<children>
+				<Label text="Reçete Bilgileri" textFill="#6f0606">
+					<padding>
+						<Insets bottom="5.0" left="10.0" top="5.0" />
+					</padding>
+					<font>
+						<Font name="System Bold" size="12.0" />
+					</font>
+				</Label>
+				<Separator prefWidth="200.0" />
+				<GridPane>
+					<columnConstraints>
+						<ColumnConstraints hgrow="SOMETIMES" maxWidth="295.0"
+							minWidth="115.0" prefWidth="115.0" />
+						<ColumnConstraints halignment="LEFT" maxWidth="570.0"
+							minWidth="150.0" percentWidth="80.0" prefWidth="435.0" />
+					</columnConstraints>
+					<rowConstraints>
+						<RowConstraints minHeight="10.0" prefHeight="30.0"
+							vgrow="SOMETIMES" />
+						<RowConstraints minHeight="10.0" prefHeight="30.0"
+							vgrow="SOMETIMES" />
+						<RowConstraints minHeight="10.0" prefHeight="30.0"
+							vgrow="SOMETIMES" />
+						<RowConstraints minHeight="10.0" prefHeight="30.0"
+							vgrow="SOMETIMES" />
+						<RowConstraints minHeight="10.0" prefHeight="30.0"
+							vgrow="SOMETIMES" />
+					</rowConstraints>
+					<children>
+						<TextField fx:id="txtHastaAdi" promptText="Hasta Adı"
+							GridPane.columnIndex="1">
+							<GridPane.margin>
+								<Insets right="5.0" />
+							</GridPane.margin>
+						</TextField>
+						<TextField fx:id="txtIlacAdi" promptText="İlaç Adı"
+							GridPane.columnIndex="1" GridPane.rowIndex="1">
+							<GridPane.margin>
+								<Insets right="5.0" />
+							</GridPane.margin>
+						</TextField>
+						<TextField fx:id="txtTaniKodu" promptText="Tanı Kodu"
+							GridPane.columnIndex="1" GridPane.rowIndex="2">
+							<GridPane.margin>
+								<Insets right="5.0" />
+							</GridPane.margin>
+						</TextField>
+						<HBox prefHeight="100.0" prefWidth="200.0"
+							GridPane.columnIndex="1" GridPane.rowIndex="4">
+							<children>
+								<Button fx:id="btnIlacEkle" mnemonicParsing="false"
+									onAction="#btnIlacEkleOnAction" text="İlaç Ekle">
+									<HBox.margin>
+										<Insets right="5.0" />
+									</HBox.margin>
+								</Button>
+								<Button fx:id="btnSeciliIlaciSil" mnemonicParsing="false"
+									onAction="#btnSeciliIlaciSilOnAction" text="Seçili İlacı Sil">
+									<HBox.margin>
+										<Insets right="5.0" />
+									</HBox.margin>
+								</Button>
+								<Button fx:id="btnReceteKaydet" mnemonicParsing="false"
+									onAction="#btnReceteKaydetOnAction" text="KAYDET" />
+							</children>
+						</HBox>
+						<Label text="İlaç" GridPane.rowIndex="1">
+							<GridPane.margin>
+								<Insets left="10.0" />
+							</GridPane.margin>
+						</Label>
+						<Label text="ICD10" GridPane.rowIndex="2">
+							<GridPane.margin>
+								<Insets left="10.0" />
+							</GridPane.margin>
+						</Label>
+						<Label text="DozxPeriyotxBirim" GridPane.rowIndex="3">
+							<GridPane.margin>
+								<Insets left="10.0" />
+							</GridPane.margin>
+						</Label>
+						<HBox prefHeight="100.0" prefWidth="200.0"
+							GridPane.columnIndex="1" GridPane.rowIndex="3">
+							<children>
+								<TextField fx:id="txtDoz" prefWidth="50.0" promptText="Doz" />
+								<Label text=" X ">
+									<HBox.margin>
+										<Insets top="5.0" />
+									</HBox.margin>
+								</Label>
+								<TextField fx:id="txtPeriyot" prefWidth="50.0"
+									promptText="Periyot" />
+								<ComboBox fx:id="cbBirim" prefWidth="150.0" promptText="Birimi">
+									<HBox.margin>
+										<Insets left="10.0" />
+									</HBox.margin>
+								</ComboBox>
+							</children>
+						</HBox>
+						<Label text="Hasta">
+							<GridPane.margin>
+								<Insets left="10.0" />
+							</GridPane.margin>
+						</Label>
+					</children>
+				</GridPane>
+			</children>
+		</VBox>
+		<TableView fx:id="tvReceteIlaclari" prefHeight="200.0" prefWidth="200.0" />
+	</children>
+</VBox>
